@@ -22,7 +22,9 @@
          */
         'app.avengers',
         'app.dashboard',
-        'app.layout'
+        'app.layout',
+
+        'testmodule'
     ]);
 
 })();
