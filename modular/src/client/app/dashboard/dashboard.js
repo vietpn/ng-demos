@@ -5,9 +5,9 @@
         .module('app.dashboard')
         .controller('Dashboard', Dashboard);
 
-    Dashboard.$inject = ['$q', 'dataservice', 'logger', 'testservice'];
+    Dashboard.$inject = ['$q', 'dataservice', 'logger', 'testservice', 'mydata'];
 
-    function Dashboard($q, dataservice, logger, testservice) {
+    function Dashboard($q, dataservice, logger, testservice, mydata) {
 
         /*jshint validthis: true */
         var vm = this;
@@ -25,6 +25,8 @@
         activate();
 
         function activate() {
+            toastr.warning('I received: ' + mydata.first);
+
             var promises = [getAvengerCount(), getAvengersCast()];
 //            Using a resolver on all routes or dataservice.ready in every controller
 //            return dataservice.ready(promises).then(function(){
